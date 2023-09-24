@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {%block content%}
 
+{% if user.is_authenticated %}
 <div class="card center">
     <div class="card-header">
       {{record.title}}
@@ -15,5 +16,7 @@
     </div>
   </div>
 
-
+{% else %}
+pls login to acces this content
+{% endif %}
 {%endblock%}
