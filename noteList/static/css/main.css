@@ -7,3 +7,18 @@
 .center {
     width: 18rem; margin:5rem auto;
 }
+body {
+    --body-bg-color: white;
+    --text-color:black;
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+}
+body.dark {
+    --body-bg-color:black;
+    --text-color: antiquewhite;
+}
+
+.dark {
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+}
