@@ -1,5 +1,21 @@
-let theme = document.getElementById('theme');
-theme.addEventListener('click',()=>{
+let themeToggle = document.getElementById('theme');
+ let theme = localStorage.getItem('theme');
+ console.log(theme)
+
+themeToggle.addEventListener('click',()=>{
+    
+    if (localStorage.getItem('theme') == 'dark'){
+        localStorage.setItem('theme','light');
+        toggleTheme()
+    }
+    else{
+        localStorage.setItem('theme','dark');
+        toggleTheme()
+    }
+    
+})
+
+let  toggleTheme = async () => {
     document.body.classList.toggle('dark');
     let navbar = document.getElementById('navbar-theme');
     navbar.classList.toggle('navbar-dark');
@@ -14,4 +30,8 @@ theme.addEventListener('click',()=>{
     let content = document.getElementById('id_content');
     title.classList.toggle('dark');
     content.classList.toggle('dark');
-})
+}
+
+if (theme == 'dark'){
+    toggleTheme()
+}
