@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .forms import addRecordForm
 from django.contrib import messages
@@ -25,4 +25,8 @@ def viewRecord(request,pk):
     record = Record.objects.get(id=pk)
     cntxt = {'record':record}
     return render(request,'viewRecord.html',cntxt)
+
+def deleteRecord(self,pk):
+    Record.objects.filter(id=pk).delete()
+    return redirect(home)
 
