@@ -9,11 +9,11 @@
     <div class="card-body">
       <h5 class="card-title"></h5>
       <p class="card-text">{{record.content}}</p>
-      <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+      <a href="{% url 'updateRecord' record.id %}" class="btn btn-secondary">update</a>
       <a href="{% url 'deleteRecord' record.id %}" class="btn btn-danger">delete</a>
     </div>
     <div class="card-footer text-body-secondary">
-      2 days ago
+      <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
     </div>
   </div>
 

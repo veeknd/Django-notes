@@ -26,7 +26,18 @@ def viewRecord(request,pk):
     cntxt = {'record':record}
     return render(request,'viewRecord.html',cntxt)
 
-def deleteRecord(self,pk):
+def deleteRecord(request,pk):
     Record.objects.filter(id=pk).delete()
     return redirect(home)
 
+def updateRecord(request,pk):
+    current = Record.objects.get(id=pk)
+    if request.method == 'POST':
+        form = addRecordForm(request.POST, instance=current)
+        if form.is_valid():
+            update = form.save()
+            return redirect(home)
+    else:
+        form = addRecordForm(instance=current)
+    
+    return render(request,'updateRecord.html',{'form':form ,'id':pk})

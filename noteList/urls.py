@@ -7,4 +7,5 @@ urlpatterns = [
     path("add",views.addRecord,name="addRecord"),
     path("record/<str:pk>",views.viewRecord, name='viewRecord'),
     path("delete/<str:pk>",views.deleteRecord,name='deleteRecord'),
+    path("update/<str:pk>",views.updateRecord,name='updateRecord'),
 ]
