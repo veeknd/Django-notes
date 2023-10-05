@@ -3,11 +3,14 @@ from django.http import HttpResponseRedirect
 from .forms import addRecordForm
 from django.contrib import messages
 from .models import Record
+from django.views.generic.list import ListView 
 
 # Create your views here.
-def home(request):
-    records = Record.objects.all()
-    return render(request,"home.html",{'records':records})
+class home(ListView):
+    model = Record
+    template_name = 'home.html'
+    context_object_name = 'records'
+    
 
 def addRecord(request):
     if request.method== "POST":
