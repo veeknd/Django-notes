@@ -18,7 +18,7 @@ body.dark {
     --text-color: antiquewhite;
 }
 
-.dark {
+.dark, .dark:focus {
     background-color: var(--body-bg-color);
     color: var(--text-color);
 }
