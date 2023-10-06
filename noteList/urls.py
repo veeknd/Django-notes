@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path("",views.home.as_view(),name="home"),
+    path("",views.homeView.as_view(),name="home"),
     path("add",views.addRecord,name="addRecord"),
     path("record/<str:pk>",views.viewRecord, name='viewRecord'),
     path("delete/<str:pk>",views.deleteRecord,name='deleteRecord'),
