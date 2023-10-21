@@ -4,6 +4,7 @@
 
 
     <div class="card-deck">
+      {% if records %}
         {% for record in records %}
         <div class="card" style="margin: 2rem;">
           <div class="card-body">
@@ -13,7 +14,9 @@
           </div>
         </div>
         {% endfor %}
-
+      {% else %}
+      <p>No records found</p>
+      {% endif %}
     </div>
    
     
