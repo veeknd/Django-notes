@@ -2,7 +2,17 @@
 
 Django notes is a notes app which allows to add, edit, and delete entries.
 
+User can login can have individual and secure notes.
+DEMO:
+
+Lia's Notes. 
+![john_notes](./screenshots/lia_notes.png)
+
+John's notes. John has choosen dark theme.
+
 ![john_notes](./screenshots/john_notes.png)
+
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
